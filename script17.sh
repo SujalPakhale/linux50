@@ -1,11 +1,8 @@
 #!/bin/bash
-# System Update Automation
-if command -v apt &> /dev/null; then
-    sudo apt update && sudo apt upgrade -y
-elif command -v yum &> /dev/null; then
-    sudo yum update -y
-elif command -v dnf &> /dev/null; then
-    sudo dnf upgrade -y
-else
-    echo "Unsupported package manager."
-fi
+echo "Enter a number:"
+read num
+fact=1
+for ((i=1; i<=num; i++)); do
+    fact=$((fact * i))
+done
+echo "Factorial: $fact"
