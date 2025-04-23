@@ -1,5 +1,12 @@
 #!/bin/bash
-# Auto-Deploy Static Website (S3)
-aws s3 sync ./website s3://my-bucket --delete
-aws cloudfront create-invalidation --distribution-id ABCD1234 --paths "/*"
-echo "Website deployed and cache invalidated."
+echo "Enter a number:"
+read num
+i=1
+while [ $((i * i)) -lt $num ]; do
+    i=$((i + 1))
+done
+if [ $((i * i)) -eq $num ]; then
+    echo "Perfect Square"
+else
+    echo "Not a Perfect Square"
+fi
