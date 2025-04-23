@@ -1,3 +1,8 @@
 #!/bin/bash
-# Monitor File Changes
-inotifywait -m -r -e modify,create,delete /path/to/watch
+echo "Enter a character:"
+read char
+if [[ "$char" =~ [a-zA-Z] ]]; then
+    echo "Alphabet"
+else
+    echo "Not an Alphabet"
+fi
