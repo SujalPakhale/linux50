@@ -1,6 +1,16 @@
 #!/bin/bash
-# SSH Login Notifier
-user=$(whoami)
-ip=$(echo "$SSH_CONNECTION" | awk '{print $1}')
-hostname=$(hostname)
-echo "User $user logged in from $ip at $(date)" | mail -s "SSH Login Alert on $hostname" admin@example.com
+echo "Enter a number:"
+read num
+len=${#num}
+sum=0
+temp=$num
+while [ $temp -gt 0 ]; do
+    digit=$((temp % 10))
+    sum=$((sum + digit ** len))
+    temp=$((temp / 10))
+done
+if [ $sum -eq $num ]; then
+    echo "Armstrong Number"
+else
+    echo "Not an Armstrong Number"
+fi
