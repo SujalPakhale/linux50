@@ -1,10 +1,10 @@
 #!/bin/bash
-# Battery Status Checker
-battery_path="/sys/class/power_supply/BAT0"
-if [ -d "$battery_path" ]; then
-    capacity=$(cat "$battery_path/capacity")
-    status=$(cat "$battery_path/status")
-    echo "Battery: $capacity% | Status: $status"
-else
-    echo "No battery detected."
-fi
+echo "Enter a number:"
+read num
+rev=0
+while [ $num -gt 0 ]; do
+    digit=$((num % 10))
+    rev=$((rev * 10 + digit))
+    num=$((num / 10))
+done
+echo "Reversed: $rev"
