@@ -1,4 +1,10 @@
 #!/bin/bash
-# Kubernetes Pod Restarter
-kubectl get pods --no-headers | grep "Error" | awk '{print $1}' | xargs kubectl delete pod
-echo "Restarted failed pods."
+echo "Enter a number:"
+read num
+if [ $num -gt 0 ]; then
+    echo "Positive"
+elif [ $num -lt 0 ]; then
+    echo "Negative"
+else
+    echo "Zero"
+fi
