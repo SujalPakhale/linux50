@@ -1,8 +1,13 @@
 #!/bin/bash
-# Network Speed Test
-echo "Running speed test..."
-result=$(speedtest-cli --simple)
-download=$(echo "$result" | grep "Download" | awk '{print $2}')
-upload=$(echo "$result" | grep "Upload" | awk '{print $2}')
-ping=$(echo "$result" | grep "Ping" | awk '{print $2}')
-echo "Download: ${download}Mbps | Upload: ${upload}Mbps | Ping: ${ping}ms"
+echo "Enter number of terms:"
+read n
+a=0
+b=1
+echo "Fibonacci Series:"
+for ((i=0; i<n; i++)); do
+    echo -n "$a "
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done
+echo
