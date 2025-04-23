@@ -1,4 +1,8 @@
 #!/bin/bash
-# Auto-Clean Temp Files
-find /tmp -type f -mtime +30 -delete
-echo "Temp files cleaned."
+echo "Enter a number:"
+read num
+if [ $((num % 2)) -eq 0 ]; then
+    echo "Even"
+else
+    echo "Odd"
+fi
