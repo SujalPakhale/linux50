@@ -1,6 +1,8 @@
 #!/bin/bash
-# Check for Kernel Updates
-uname -r
-if command -v apt &> /dev/null; then
-    apt list --upgradable | grep linux-image
+echo "Enter filename:"
+read filename
+if [ -f "$filename" ]; then
+    echo "File exists"
+else
+    echo "File does not exist"
 fi
