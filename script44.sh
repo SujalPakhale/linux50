@@ -1,3 +1,5 @@
 #!/bin/bash
-# Check DNS Resolution Time
-dig example.com | grep "Query time"
+echo "Enter temperature in Fahrenheit:"
+read fahrenheit
+celsius=$(( (fahrenheit - 32) * 5/9 ))
+echo "Celsius: $celsius"
